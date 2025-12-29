@@ -2,8 +2,35 @@ import React, { useEffect, useState } from 'react';
 import { ArrowRight, CheckCircle, Users, TrendingUp, Zap } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card } from '../components/ui/card';
+import { useNavigate } from 'react-router-dom';
+import { statsAPI } from '../services/api';
 
 const Home = () => {
+  const navigate = useNavigate();
+  const [stats, setStats] = useState({
+    total_websites: 50000,
+    total_conversations: 5000000,
+    avg_engagement_rate: 90,
+    total_chatbots: 50000
+  });
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchStats = async () => {
+      try {
+        const response = await statsAPI.getGlobal();
+        if (response.data.success) {
+          setStats(response.data.stats);
+        }
+      } catch (error) {
+        console.error('Failed to fetch stats:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchStats();
+  }, []);
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
