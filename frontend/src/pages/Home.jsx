@@ -62,6 +62,7 @@ const Home = () => {
               </a>
               <Button 
                 size="lg" 
+                onClick={() => navigate('/create')}
                 className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
               >
                 Get Started <ArrowRight className="ml-2 h-5 w-5" />
