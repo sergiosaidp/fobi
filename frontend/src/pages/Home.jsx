@@ -155,21 +155,21 @@ const Home = () => {
           <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto">
             <div className="text-center">
               <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all transform hover:scale-105">
-                <div className="text-6xl font-bold text-white mb-2">50K+</div>
+                <div className="text-6xl font-bold text-white mb-2">{Math.floor(stats.total_websites / 1000)}K+</div>
                 <div className="text-white/90 text-lg">Websites using Fobi</div>
               </div>
             </div>
             
             <div className="text-center">
               <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all transform hover:scale-105">
-                <div className="text-6xl font-bold text-white mb-2">90%</div>
+                <div className="text-6xl font-bold text-white mb-2">{Math.round(stats.avg_engagement_rate)}%</div>
                 <div className="text-white/90 text-lg">Increase in customer engagement rate</div>
               </div>
             </div>
             
             <div className="text-center">
               <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all transform hover:scale-105">
-                <div className="text-6xl font-bold text-white mb-2">5M+</div>
+                <div className="text-6xl font-bold text-white mb-2">{Math.floor(stats.total_conversations / 1000000)}M+</div>
                 <div className="text-white/90 text-lg">Conversations created using Fobi</div>
               </div>
             </div>
