@@ -259,7 +259,8 @@ const Home = () => {
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-5xl font-bold text-gray-900 mb-8">Start Using Fobi and Scale Your Business</h2>
           <Button 
-            size="lg" 
+            size="lg"
+            onClick={() => navigate('/create')} 
             className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-12 py-6 text-xl rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
           >
             Get Started Now <ArrowRight className="ml-2 h-6 w-6" />
